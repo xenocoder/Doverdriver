@@ -2352,6 +2352,103 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="mb_diodes">
+<description>&lt;b&gt;Diodes&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;Zener 1N47xx (as in protection for the MOSFET in the AMZ MOSFET Booster)
+&lt;li&gt;rectifier 1N4001-1N4008 (for polarity reversal protection in power supply sections)
+&lt;li&gt;clipping 1N914 (as in a TS808)
+&lt;li&gt;LED (light emitting diode, 3mm and 5mm)
+&lt;li&gt;mostly gathered from Eagle libraries
+&lt;/ul&gt;</description>
+<packages>
+<package name="LED3MM">
+<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
+3 mm, round</description>
+<wire x1="1.143" y1="1.27" x2="1.524" y2="1.651" width="0.127" layer="21" curve="90"/>
+<wire x1="1.524" y1="1.651" x2="2.54" y2="1.651" width="0.127" layer="21"/>
+<wire x1="2.54" y1="1.651" x2="2.54" y2="-1.778" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.778" x2="1.524" y2="-1.778" width="0.127" layer="21"/>
+<wire x1="1.524" y1="-1.778" x2="1.524" y2="-1.651" width="0.127" layer="21"/>
+<wire x1="1.524" y1="-1.651" x2="1.143" y2="-1.27" width="0.127" layer="21" curve="90"/>
+<wire x1="-1.397" y1="1.27" x2="1.143" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-1.397" y1="1.27" x2="-2.667" y2="0" width="0.127" layer="21" curve="90"/>
+<wire x1="1.143" y1="-1.27" x2="-1.397" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-1.397" y1="-1.27" x2="-2.667" y2="0" width="0.127" layer="21" curve="-90"/>
+<pad name="A" x="-1.27" y="0" drill="1" diameter="2" shape="square"/>
+<pad name="K" x="1.27" y="0" drill="1" diameter="2"/>
+<text x="0.889" y="-1.778" size="0.8128" layer="25" ratio="12" rot="R180">&gt;NAME</text>
+</package>
+<package name="LED5MM">
+<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
+5 mm, round</description>
+<wire x1="2.54" y1="-1.905" x2="2.54" y2="1.905" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="-1.905" x2="2.54" y2="1.905" width="0.254" layer="21" curve="-286.260205" cap="flat"/>
+<wire x1="-1.143" y1="0" x2="0" y2="1.143" width="0.1524" layer="51" curve="-90" cap="flat"/>
+<wire x1="0" y1="-1.143" x2="1.143" y2="0" width="0.1524" layer="51" curve="90" cap="flat"/>
+<wire x1="-1.651" y1="0" x2="0" y2="1.651" width="0.1524" layer="51" curve="-90" cap="flat"/>
+<wire x1="0" y1="-1.651" x2="1.651" y2="0" width="0.1524" layer="51" curve="90" cap="flat"/>
+<wire x1="-2.159" y1="0" x2="0" y2="2.159" width="0.1524" layer="51" curve="-90" cap="flat"/>
+<wire x1="0" y1="-2.159" x2="2.159" y2="0" width="0.1524" layer="51" curve="90" cap="flat"/>
+<circle x="0" y="0" radius="2.54" width="0.1524" layer="21"/>
+<pad name="A" x="-1.905" y="0" drill="1" diameter="2"/>
+<pad name="K" x="1.27" y="0" drill="1" diameter="2" shape="square"/>
+<text x="3.175" y="0.5334" size="1.27" layer="25" ratio="12">&gt;NAME</text>
+<text x="3.2004" y="-1.8034" size="1.27" layer="27" ratio="12">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="LED">
+<wire x1="2.54" y1="-1.27" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.27" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.778" y1="2.032" x2="0.381" y2="3.429" width="0.1524" layer="94"/>
+<wire x1="0.635" y1="1.905" x2="-0.762" y2="3.302" width="0.1524" layer="94"/>
+<text x="-2.032" y="-3.556" size="1.778" layer="95">&gt;NAME</text>
+<pin name="C" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="A" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<polygon width="0.1524" layer="94">
+<vertex x="0.381" y="3.429"/>
+<vertex x="1.27" y="3.048"/>
+<vertex x="0.762" y="2.54"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="-0.762" y="3.302"/>
+<vertex x="0.127" y="2.921"/>
+<vertex x="-0.381" y="2.413"/>
+</polygon>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LED" prefix="D">
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="2.54"/>
+</gates>
+<devices>
+<device name="3MM" package="LED3MM">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="K"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="5MM" package="LED5MM">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="K"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2363,10 +2460,10 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 </classes>
 <parts>
 <part name="U$1" library="xc_library" deviceset="BOARDLINK" device=""/>
-<part name="U$2" library="xc_library" deviceset="MMBF5458" device="" value="MMBFj201"/>
-<part name="U$3" library="xc_library" deviceset="MMBF5458" device="" value="MMBFJ201"/>
-<part name="U$4" library="xc_library" deviceset="MMBF5458" device="" value="MMBFJ201"/>
-<part name="U$5" library="xc_library" deviceset="MMBF5458" device="" value="MMBFJ201"/>
+<part name="U$2" library="xc_library" deviceset="MMBF5458" device="" value="J201"/>
+<part name="U$3" library="xc_library" deviceset="MMBF5458" device="" value="J201"/>
+<part name="U$4" library="xc_library" deviceset="MMBF5458" device="" value="J201"/>
+<part name="U$5" library="xc_library" deviceset="MMBF5458" device="" value="J201"/>
 <part name="R1" library="mb_resistors" deviceset="6MM" device=".3" value="1M"/>
 <part name="R2" library="mb_resistors" deviceset="6MM" device=".3" value="22K"/>
 <part name="R3" library="mb_resistors" deviceset="6MM" device=".3" value="1k5"/>
@@ -2401,20 +2498,20 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <part name="GND10" library="mb_supply" deviceset="GND" device=""/>
 <part name="C1" library="mb_caps-electro" deviceset="063" device="1" value="100uF"/>
 <part name="C2" library="mb_caps-ceramic" deviceset="050X030_025" device="1" value="330pF"/>
-<part name="C3" library="mb_caps-electro" deviceset="050" device="1" value="4k7"/>
+<part name="C3" library="mb_caps-electro" deviceset="050" device="1" value="4u7"/>
 <part name="C4" library="mb_caps-chicklet" deviceset="075X040" device="2" value="100nF"/>
 <part name="C5" library="mb_caps-box" deviceset="072X025" device="2" value="47nF"/>
 <part name="C6" library="mb_caps-ceramic" deviceset="050X030_025" device="1" value="47pF"/>
 <part name="C7" library="mb_caps-ceramic" deviceset="050X030_025" device="1" value="330pF"/>
-<part name="C8" library="mb_caps-electro" deviceset="050" device="1" value="4k7"/>
+<part name="C8" library="mb_caps-electro" deviceset="050" device="1" value="4u7"/>
 <part name="C9" library="mb_caps-box" deviceset="072X025" device="2" value="10nF"/>
 <part name="GND11" library="mb_supply" deviceset="GND" device=""/>
-<part name="C10" library="mb_caps-electro" deviceset="050" device="1" value="4k7"/>
+<part name="C10" library="mb_caps-electro" deviceset="050" device="1" value="4u7"/>
 <part name="GND12" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND13" library="mb_supply" deviceset="GND" device=""/>
 <part name="C11" library="mb_caps-box" deviceset="072X025" device="2" value="22nF"/>
 <part name="GND14" library="mb_supply" deviceset="GND" device=""/>
-<part name="C12" library="mb_caps-electro" deviceset="050" device="1" value="4k7"/>
+<part name="C12" library="mb_caps-electro" deviceset="050" device="1" value="4u7"/>
 <part name="GND15" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND16" library="mb_supply" deviceset="GND" device=""/>
 <part name="C13" library="mb_caps-box" deviceset="072X025" device="2" value="15nF"/>
@@ -2425,6 +2522,8 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <part name="GND17" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND18" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND19" library="mb_supply" deviceset="GND" device=""/>
+<part name="R16" library="mb_resistors" deviceset="6MM" device=".3" value="4k7"/>
+<part name="D1" library="mb_diodes" deviceset="LED" device="3MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -2437,7 +2536,7 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 </instance>
 <instance part="U$2" gate="G$1" x="12.7" y="76.2" smashed="yes">
 <attribute name="NAME" x="9.144" y="70.612" size="1.778" layer="95"/>
-<attribute name="VALUE" x="13.716" y="81.28" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="18.796" y="77.47" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="U$3" gate="G$1" x="78.74" y="68.58" smashed="yes">
 <attribute name="NAME" x="79.756" y="67.818" size="1.778" layer="95"/>
@@ -2545,8 +2644,8 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <instance part="GND2" gate="GND" x="-2.54" y="86.36" smashed="yes" rot="R90">
 <attribute name="VALUE" x="0.635" y="84.455" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND3" gate="GND" x="10.414" y="85.598" smashed="yes">
-<attribute name="VALUE" x="8.509" y="82.423" size="1.778" layer="96"/>
+<instance part="GND3" gate="GND" x="10.414" y="83.566" smashed="yes">
+<attribute name="VALUE" x="8.509" y="80.391" size="1.778" layer="96"/>
 </instance>
 <instance part="GND4" gate="GND" x="15.24" y="50.8" smashed="yes">
 <attribute name="VALUE" x="13.335" y="47.625" size="1.778" layer="96"/>
@@ -2569,9 +2668,9 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <instance part="GND10" gate="GND" x="91.44" y="48.26" smashed="yes">
 <attribute name="VALUE" x="89.535" y="45.085" size="1.778" layer="96"/>
 </instance>
-<instance part="C1" gate="G$1" x="10.414" y="95.25" smashed="yes">
-<attribute name="NAME" x="11.43" y="95.885" size="1.778" layer="95"/>
-<attribute name="VALUE" x="12.573" y="89.154" size="1.778" layer="96" rot="R90"/>
+<instance part="C1" gate="G$1" x="10.414" y="93.218" smashed="yes">
+<attribute name="NAME" x="11.43" y="93.853" size="1.778" layer="95"/>
+<attribute name="VALUE" x="12.573" y="87.122" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C2" gate="G$1" x="35.56" y="81.28" smashed="yes" rot="R90">
 <attribute name="NAME" x="33.274" y="83.439" size="1.778" layer="95" rot="R180"/>
@@ -2664,6 +2763,13 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <instance part="GND19" gate="GND" x="218.44" y="63.5" smashed="yes">
 <attribute name="VALUE" x="216.535" y="60.325" size="1.778" layer="96"/>
 </instance>
+<instance part="R16" gate="G$1" x="5.08" y="88.9" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.5814" y="87.249" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="7.112" y="82.55" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="D1" gate="G$1" x="-2.54" y="81.28" smashed="yes">
+<attribute name="NAME" x="-4.572" y="77.724" size="1.778" layer="95"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -2693,7 +2799,7 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <segment>
 <pinref part="GND3" gate="GND" pin="GND"/>
 <pinref part="C1" gate="G$1" pin="-"/>
-<wire x1="10.414" y1="88.138" x2="10.414" y2="90.17" width="0.1524" layer="91"/>
+<wire x1="10.414" y1="86.106" x2="10.414" y2="88.138" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND4" gate="GND" pin="GND"/>
@@ -2820,11 +2926,10 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <wire x1="-11.176" y1="83.82" x2="1.524" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="1.524" y1="83.82" x2="1.524" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="TRIM1" gate="G$1" pin="3"/>
-<wire x1="1.524" y1="99.06" x2="10.414" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="+"/>
-<wire x1="10.414" y1="99.06" x2="15.24" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="10.414" y1="97.79" x2="10.414" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="1.524" y1="99.06" x2="5.08" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="99.06" x2="7.62" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="TRIM2" gate="G$1" pin="3"/>
+<wire x1="7.62" y1="99.06" x2="15.24" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="99.06" x2="15.24" y2="99.06" width="0.1524" layer="91"/>
 <junction x="15.24" y="99.06"/>
 <pinref part="TRIM3" gate="G$1" pin="3"/>
@@ -2833,6 +2938,13 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <pinref part="TRIM4" gate="G$1" pin="3"/>
 <wire x1="167.64" y1="99.06" x2="124.46" y2="99.06" width="0.1524" layer="91"/>
 <junction x="124.46" y="99.06"/>
+<pinref part="R16" gate="G$1" pin="2"/>
+<wire x1="5.08" y1="93.98" x2="5.08" y2="99.06" width="0.1524" layer="91"/>
+<junction x="5.08" y="99.06"/>
+<pinref part="C1" gate="G$1" pin="+"/>
+<wire x1="10.414" y1="95.758" x2="7.62" y2="95.758" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="95.758" x2="7.62" y2="99.06" width="0.1524" layer="91"/>
+<junction x="7.62" y="99.06"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -3059,6 +3171,21 @@ RV09AF-40-20K-[A|B|C]{value}K</description>
 <wire x1="223.52" y1="101.6" x2="-11.176" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="OUT"/>
 <wire x1="-11.176" y1="88.9" x2="-11.176" y2="101.6" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$28" class="0">
+<segment>
+<pinref part="R16" gate="G$1" pin="1"/>
+<pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="5.08" y1="83.82" x2="5.08" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="81.28" x2="2.54" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$29" class="0">
+<segment>
+<pinref part="D1" gate="G$1" pin="C"/>
+<pinref part="U$1" gate="G$1" pin="LED"/>
+<wire x1="-5.08" y1="81.28" x2="-11.176" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

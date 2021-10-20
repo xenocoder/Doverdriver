@@ -1,0 +1,56 @@
+Partlist
+
+Exported from Dover Driver.brd at 10/19/21 9:26 PM
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value          Package     Library          Position (mil)        Orientation
+
+BASS     A500K          16MM        mb_pots          (1930 1200)           R0
+C1       100uF          063_025     mb_caps-electro  (2100 450)            R0
+C2       330pF          050X030_025 mb_caps-ceramic  (325 925)             R90
+C3       4u7            050_020_1   mb_caps-electro  (2125 1575)           R270
+C4       100nF          075X040     mb_caps-chicklet (550 900)             R90
+C5       47nF           072X025     mb_caps-box      (975 475)             R90
+C6       47pF           050X030_025 mb_caps-ceramic  (175 500)             R90
+C7       330pF          050X030_025 mb_caps-ceramic  (1525 875)            R90
+C8       4u7            050_020_1   mb_caps-electro  (1725 1450)           R270
+C9       10nF           072X025     mb_caps-box      (1150 1525)           R90
+C10      4u7            050_020_1   mb_caps-electro  (1550 1625)           R270
+C11      22nF           072X025     mb_caps-box      (600 1525)            R90
+C12      4u7            050_020_1   mb_caps-electro  (825 900)             R270
+C13      15nF           072X025     mb_caps-box      (150 925)             R90
+C14      2n2            072X025     mb_caps-box      (750 475)             R90
+C15      2n2            072X025     mb_caps-box      (1700 450)            R90
+D1       LED3MM         LED3MM      mb_diodes        (1165 900)            R180
+MASTER   A100k          16MM        mb_pots          (1930 150)            R0
+MID      B100K          16MM        mb_pots          (1165 1200)           R0
+R1       1M             R0207/3     mb_resistors     (1700 850)            R90
+R2       22K            R0207/3     mb_resistors     (2000 850)            R270
+R3       1k5            R0207/3     mb_resistors     (2150 850)            R90
+R4       100k           R0207/3     mb_resistors     (975 875)             R90
+R5       10k            R0207/3     mb_resistors     (1850 850)            R90
+R6       220k           R0207/3     mb_resistors     (1375 875)            R270
+R7       1k5            R0207/3     mb_resistors     (1900 1525)           R90
+R8       68k            R0207/3     mb_resistors     (975 1525)            R270
+R9       100k           R0207/3     mb_resistors     (800 1525)            R90
+R10      1k5            R0207/3     mb_resistors     (1350 1525)           R90
+R11      180k           R0207/3     mb_resistors     (375 1500)            R270
+R12      100k           R0207/3     mb_resistors     (200 1500)            R90
+R13      1k5            R0207/3     mb_resistors     (600 475)             R90
+R14      15k            R0207/3     mb_resistors     (350 475)             R90
+R15      15k            R0207/3     mb_resistors     (1475 450)            R90
+R16      4k7            R0207/3     mb_resistors     (1300 450)            R270
+TREB     A250k          16MM        mb_pots          (400 1200)            R0
+TRIM1    100K           ROUNDTRIM   xc_library       (1900 1900)           R0
+TRIM2    100K           ROUNDTRIM   xc_library       (1350 1900)           R0
+TRIM3    100K           ROUNDTRIM   xc_library       (800 1900)            R0
+TRIM4    100K           ROUNDTRIM   xc_library       (250 1900)            R0
+U$1      BOARDLINK      BOARDLINK   xc_library       (1065 125)            R0
+U$2      J201           SOT23       xc_library       (2150 1950)           R0
+U$3      J201           SOT23       xc_library       (1600 1950)           R0
+U$4      J201           SOT23       xc_library       (1050 1950)           R0
+U$5      J201           SOT23       xc_library       (500 1950)            R0
+VOL      A1M            16MM        mb_pots          (400 150)             R0
